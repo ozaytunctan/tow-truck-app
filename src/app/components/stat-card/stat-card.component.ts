@@ -1,30 +1,17 @@
 import {Component, input} from '@angular/core';
 import {UpperCasePipe} from "@angular/common";
-import {
-  StatWidgetBody,
-  StatWidgetComponent,
-  StatWidgetFooter,
-  StatWidgetTitle
-} from "../stat-widget/stat-widget.component";
 
 @Component({
-  selector: 'app-stat-card',
-  standalone: true,
-  imports: [
-    UpperCasePipe,
-    StatWidgetBody,
-    StatWidgetComponent,
-    StatWidgetFooter,
-    StatWidgetTitle
-  ],
-  template: `
+    selector: 'app-stat-card',
+    imports: [UpperCasePipe],
+    template: `
     <section class="stat-card">
       <h2 class="title">{{ title()|uppercase }}</h2>
       <p class="value">{{ content() }}</p>
       <div class="comparison">{{ footer() }}</div>
     </section>
   `,
-  styles: `
+    styles: `
 
 
     .stat-card {

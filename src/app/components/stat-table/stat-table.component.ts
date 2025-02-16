@@ -2,7 +2,7 @@ import {Component, computed, input, signal} from '@angular/core';
 import {TitleCasePipe} from "@angular/common";
 
 @Component({
-  template: `
+    template: `
     <section class="stat-table-container">
       <h2>{{ title() }}</h2>
       <table>
@@ -26,12 +26,11 @@ import {TitleCasePipe} from "@angular/common";
       </table>
     </section>
   `,
-  selector: 'app-stat-table',
-  standalone: true,
-  imports: [
-    TitleCasePipe
-  ],
-  styles: `
+    selector: 'app-stat-table',
+    imports: [
+        TitleCasePipe
+    ],
+    styles: `
     $primary-color:red;
     $border-color: #ddd;
     $table-header-color: red;

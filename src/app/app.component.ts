@@ -12,17 +12,16 @@ import {
 } from "./components/stat-widget/stat-widget.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet,
-    StatCardComponent,
-    StatTableComponent,
-    StatWidgetComponent,
-    StatWidgetTitle,
-    StatWidgetBody,
-    StatWidgetFooter
-  ],
-  template: `
+    selector: 'app-root',
+    imports: [RouterOutlet,
+        StatCardComponent,
+        StatTableComponent,
+        StatWidgetComponent,
+        StatWidgetTitle,
+        StatWidgetBody,
+        StatWidgetFooter
+    ],
+    template: `
     <h1>TOW TRUCK MANAGER DASHBOARD 🚑</h1>
 
     <div class="dashboard-content">
@@ -103,7 +102,7 @@ import {
 
     <router-outlet/>
   `,
-  styles: `
+    styles: `
 
     .dashboard-content {
       display: flex;

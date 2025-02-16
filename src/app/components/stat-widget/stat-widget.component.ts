@@ -7,16 +7,15 @@ export abstract class StatWidgetBase {
 }
 
 @Component({
-  selector: 'stat-widget,[stat-widget]',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: 'stat-widget,[stat-widget]',
+    imports: [],
+    template: `
     <ng-content select=".title ,stat-widget-title,[stat-widget-title]"></ng-content>
     <ng-content select=".body,stat-widget-body,[stat-widget-body]"></ng-content>
     <ng-content></ng-content>
     <ng-content select=".footer,stat-widget-footer,[stat-widget-footer]"></ng-content>
   `,
-  styles: `
+    styles: `
     :host {
       background-color: #fff;
       border-radius: 10px;
@@ -75,7 +74,6 @@ export class StatWidgetBody {
 
 @Component({
   selector: 'stat-widget-footer,[stat-widget-footer]',
-  standalone: true,
   template: `
     <ng-content></ng-content>`,
   host: {class: 'stat-widget-footer'},
