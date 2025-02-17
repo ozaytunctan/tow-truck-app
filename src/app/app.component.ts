@@ -1,4 +1,4 @@
-import {Component, signal} from '@angular/core';
+import {Component, effect, signal, viewChild} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {StatCardComponent} from "./components/stat-card/stat-card.component";
 import {StatTableComponent} from "./components/stat-table/stat-table.component";
@@ -12,16 +12,16 @@ import {
 } from "./components/stat-widget/stat-widget.component";
 
 @Component({
-    selector: 'app-root',
-    imports: [RouterOutlet,
-        StatCardComponent,
-        StatTableComponent,
-        StatWidgetComponent,
-        StatWidgetTitle,
-        StatWidgetBody,
-        StatWidgetFooter
-    ],
-    template: `
+  selector: 'app-root',
+  imports: [RouterOutlet,
+    StatCardComponent,
+    StatTableComponent,
+    StatWidgetComponent,
+    StatWidgetTitle,
+    StatWidgetBody,
+    StatWidgetFooter
+  ],
+  template: `
     <h1>TOW TRUCK MANAGER DASHBOARD 🚑</h1>
 
     <div class="dashboard-content">
@@ -81,8 +81,8 @@ import {
           [data]="topTruckPerformanceIndicators()"/>
 
         <div stat-widget>
-          <h2 stat-widget-title>Widget Title</h2>
-          <div stat-widget-body>Widget Body</div>
+          <h2 stat-widget-title #widgetTitle="statWidgetTitle">Widget Title</h2>
+          <div stat-widget-body>Widget</div>
           <footer stat-widget-footer>Widget Footer</footer>
         </div>
 
@@ -102,7 +102,7 @@ import {
 
     <router-outlet/>
   `,
-    styles: `
+  styles: `
 
     .dashboard-content {
       display: flex;
@@ -122,7 +122,12 @@ import {
 })
 export class AppComponent {
   title = 'tow-track-app';
-
   incidentContributors = signal(TOP_INCIDENT_CONTRIBUTORS);
   topTruckPerformanceIndicators = signal(TOP_TRUCK_PERFORMANCE_INDICATORS);
+  titleWidgetRef = viewChild<StatWidgetTitle>('widgetTitle');
+
+  widgetTitleLogs = effect(() => {
+      console.log(this.titleWidgetRef());
+    }
+  )
 }

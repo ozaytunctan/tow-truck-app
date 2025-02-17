@@ -8,7 +8,6 @@ export abstract class StatWidgetBase {
 
 @Component({
     selector: 'stat-widget,[stat-widget]',
-    imports: [],
     template: `
     <ng-content select=".title ,stat-widget-title,[stat-widget-title]"></ng-content>
     <ng-content select=".body,stat-widget-body,[stat-widget-body]"></ng-content>
@@ -37,6 +36,7 @@ export class StatWidgetTitleBase {
 @Component({
   selector: 'stat-widget-title,[stat-widget-title]',
   standalone: true,
+  exportAs: 'statWidgetTitle',
   styles: `
     :host {
       font-size: 1em;
@@ -44,8 +44,7 @@ export class StatWidgetTitleBase {
       margin-bottom: 10px;
     }
   `,
-  template: `
-    <ng-content></ng-content>`,
+  template: `<ng-content></ng-content>`,
   host: {class: 'stat-widget-title'},
 })
 export class StatWidgetTitle extends StatWidgetTitleBase {
