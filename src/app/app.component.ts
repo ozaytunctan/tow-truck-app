@@ -22,7 +22,7 @@ import {
     StatWidgetFooter
   ],
   template: `
-    <h1>TOW TRUCK MANAGER DASHBOARD 🚑</h1>
+    <h1>TOW TRUCK MANAGER DASHBOARD 🚚</h1>
 
     <div class="dashboard-content">
 
