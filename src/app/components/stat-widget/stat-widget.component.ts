@@ -1,4 +1,4 @@
-import {Component, Directive, input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Directive, ViewEncapsulation} from '@angular/core';
 
 
 @Directive()
@@ -7,21 +7,16 @@ export abstract class StatWidgetBase {
 }
 
 @Component({
-    selector: 'stat-widget,[stat-widget]',
-    template: `
+  selector: 'stat-widget,[stat-widget]',
+  template: `
     <ng-content select=".title ,stat-widget-title,[stat-widget-title]"></ng-content>
     <ng-content select=".body,stat-widget-body,[stat-widget-body]"></ng-content>
     <ng-content></ng-content>
     <ng-content select=".footer,stat-widget-footer,[stat-widget-footer]"></ng-content>
   `,
-    styles: `
-    :host {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-  `
+  styleUrl: 'card.scss',
+  // encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StatWidgetComponent extends StatWidgetBase {
 
@@ -35,7 +30,6 @@ export class StatWidgetTitleBase {
 
 @Component({
   selector: 'stat-widget-title,[stat-widget-title]',
-  standalone: true,
   exportAs: 'statWidgetTitle',
   styles: `
     :host {
@@ -44,7 +38,8 @@ export class StatWidgetTitleBase {
       margin-bottom: 10px;
     }
   `,
-  template: `<ng-content></ng-content>`,
+  template: `
+    <ng-content></ng-content>`,
   host: {class: 'stat-widget-title'},
 })
 export class StatWidgetTitle extends StatWidgetTitleBase {
@@ -52,19 +47,9 @@ export class StatWidgetTitle extends StatWidgetTitleBase {
 }
 
 
-@Component({
+@Directive({
   selector: 'stat-widget-body,[stat-widget-body]',
-  standalone: true,
-  template: `
-    <ng-content></ng-content>`,
-  styles: `
-
-    :host {
-      display: block;
-      padding: 10px 5px;
-    }
-  `,
-  host: {class: 'stat-widget-body'},
+  host: {class: 'stat-widget-content'},
 })
 export class StatWidgetBody {
 
