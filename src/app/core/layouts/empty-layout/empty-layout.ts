@@ -7,7 +7,7 @@ import {RouterOutlet} from "@angular/router";
     RouterOutlet
   ],
   template: `
-    <div class="flex flex-col h-screen items-center justify-center bg-gray-100">
+    <div class="flex flex-col h-screen items-center justify-center bg-gray-100 ">
       <router-outlet/>
     </div>
   `

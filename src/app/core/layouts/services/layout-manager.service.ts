@@ -1,6 +1,6 @@
 import {Injectable, signal, Type} from '@angular/core';
-import {ModernLayout} from "./modern-layout/modern-layout";
-import {EmptyLayout} from "./empty-layout/empty-layout";
+import {ModernLayout} from "../modern-layout/modern-layout";
+import {EmptyLayout} from "../empty-layout/empty-layout";
 
 export type Layout = 'modern' | 'empty' | 'classic';
 
