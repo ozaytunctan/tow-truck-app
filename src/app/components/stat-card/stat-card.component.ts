@@ -39,6 +39,12 @@ import {UpperCasePipe} from "@angular/common";
       font-size: 2em;
       font-weight: bold;
       color: #333;
+      transition: transform 600ms ease,box-shadow 600ms;
+    }
+
+    .value:hover, value:focus {
+      transform: translateX(20px);
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
     }
 
     .comparison {
