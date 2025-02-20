@@ -5,34 +5,34 @@ import {UpperCasePipe} from "@angular/common";
     selector: 'app-stat-card',
     imports: [UpperCasePipe],
     template: `
-    <section class="stat-card">
-      <h2 class="title">{{ title()|uppercase }}</h2>
+    <section class="stat-card flex flex-col justify-center w-60 h-40 bg-[#fff] p-5 shadow-sm shadow-gray-200 text-center rounded-lg ">
+      <h2 class="title text-base text-gray-[#555] mb-2 ">{{ title()|uppercase }}</h2>
       <p class="value">{{ content() }}</p>
-      <div class="comparison">{{ footer() }}</div>
+      <div class="comparison text-sm mt-4 text-gray-400">{{ footer() }}</div>
     </section>
   `,
     styles: `
 
 
     .stat-card {
-      width: 250px;
-      height: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      font-family: sans-serif;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      //width: 250px;
+      //height: 150px;
+      //display: flex;
+      //flex-direction: column;
+      //justify-content: center;
+      //
+      //background-color: #fff;
+      //border-radius: 10px;
+      //padding: 20px;
+      //text-align: center;
+      //font-family: sans-serif;
+      //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .title {
-      font-size: 1em;
-      color: #555;
-      margin-bottom: 10px;
+      //font-size: 1em;
+      //color: #555;
+      //margin-bottom: 10px;
     }
 
     .value {
@@ -48,9 +48,9 @@ import {UpperCasePipe} from "@angular/common";
     }
 
     .comparison {
-      font-size: 0.8em;
-      color: #888;
-      margin-top: 5px;
+      //font-size: 0.8em;
+      //color: #888;
+      //margin-top: 5px;
     }
 
 
